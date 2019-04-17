@@ -17,7 +17,11 @@ pubic class MyHeap{
 
   public static void heapsort(int[]){
 
-    
+
+  }
+
+  private boolean inBounds(int index, int[] data){
+    return index >= data.length;
   }
 
 
