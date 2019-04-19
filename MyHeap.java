@@ -1,14 +1,14 @@
-pubic class MyHeap{
+public class MyHeap{
 
   private static void pushDown(int[]data,int size,int index){
     int pos = index;
     index = 2*index + 1;
     while(!inBounds(index)){
       int num1 = data[index];
-      int num2 = -1;
+      int num2 = null;
       if(inBounds(index+1)){num2 = index+1;}
       if(data[pos] < num1){
-        if(num1 < num2 && num2 != -1){}
+        if(num2 != null && num1 < num2){}
       }
       index = 2*index + 1;
     }
@@ -20,13 +20,13 @@ pubic class MyHeap{
 
   }
 
-  public static void heapify(int[]){
+  public static void heapify(int[]data){
 
 
   }
 
 
-  public static void heapsort(int[]){
+  public static void heapsort(int[]data){
 
 
   }
