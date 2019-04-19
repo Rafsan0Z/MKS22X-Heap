@@ -25,7 +25,7 @@ public class MyHeap{
   }
 
   private static void pushUp(int[]data,int index){
-
+    int level = Position(index);
 
   }
 
@@ -46,7 +46,7 @@ public class MyHeap{
     data[num2] = temp;
   }
 
-  private static int Position(int[] data, int index){
+  private static int Position(int index){
     if(index == 0){return 1;}
     int level = 0;
     int counter = 1;
