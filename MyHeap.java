@@ -60,7 +60,10 @@ public class MyHeap{
   }
 
   public static void main(String[] args){
-    
+    int[] test = new int[]{2,3,18,9,5,4,20,6,1};
+    System.out.println(test);
+    pushDown(test,test.length,1);
+    System.out.println(test);
   }
 
 }
