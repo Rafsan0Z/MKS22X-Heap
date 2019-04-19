@@ -8,7 +8,14 @@ public class MyHeap{
       if(data[pos] < num1){
         if(inBounds(index+1,data)){
           int num2 = data[index+1];
-          if(num1 < num2){}
+          if(num1 < num2){
+            exchange(pos,index+1,data);
+            pos = index+1;
+          }
+        }
+        else{
+          exchange(pos,index,data);
+          pos = index;
         }
       }
       index = 2*index + 1;
@@ -35,7 +42,7 @@ public class MyHeap{
     return index >= data.length;
   }
 
-  private void exchange(int num1, int num2, int[] data){ 
+  private void exchange(int num1, int num2, int[] data){
     int temp = data[num1];
     data[num1] = data[num2];
     data[num2] = temp;
