@@ -38,8 +38,14 @@ public class MyHeap{
   }
 
   public static void heapify(int[]data){
-
-
+    int size = data.length - 1;
+    int limit = Position(size);
+    int level = 1;
+    while(level < limit){
+      for(int i = ; i < ; i++){
+        pushDown(data,size,i);
+      }
+    }
   }
 
 
