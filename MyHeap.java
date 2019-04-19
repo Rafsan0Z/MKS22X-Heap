@@ -47,7 +47,8 @@ public class MyHeap{
   }
 
   private static int Position(int[] data, int index){
-    int level = 1;
+    if(index == 0){return 1;}
+    int level = 0;
     int counter = 1;
     while(index > 0){
       level++;
@@ -71,8 +72,9 @@ public class MyHeap{
   public static void main(String[] args){
     int[] test = new int[]{2,3,18,9,5,4,20,6,1,5,7,3};
     System.out.println(toString(test));
-    pushDown(test,test.length,1);
+    pushDown(test,test.length,0);
     System.out.println(toString(test));
+    System.out.println(Position(test,0));
   }
 
 }
