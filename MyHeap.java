@@ -48,7 +48,7 @@ public class MyHeap{
     data[num2] = temp;
   }
 
-  public static String printArray(int[] ary) {
+  public static String toString(int[] ary) {
     String result = "[";
     for (int i = 0; i < ary.length ; i++) {
       result += " " + ary[i];
@@ -61,9 +61,9 @@ public class MyHeap{
 
   public static void main(String[] args){
     int[] test = new int[]{2,3,18,9,5,4,20,6,1};
-    System.out.println(test);
+    System.out.println(toString(test));
     pushDown(test,test.length,1);
-    System.out.println(test);
+    System.out.println(toString(test));
   }
 
 }
