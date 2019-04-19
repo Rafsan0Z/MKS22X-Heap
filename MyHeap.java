@@ -3,7 +3,7 @@ public class MyHeap{
   private static void pushDown(int[]data,int size,int index){
     int pos = index;
     index = 2*index + 1;
-    while(!inBounds(index)){
+    while(!inBounds(index,data)){
       int num1 = data[index];
       if(data[pos] < num1){
         if(inBounds(index+1,data)){
@@ -59,5 +59,8 @@ public class MyHeap{
     return result + "]";
   }
 
+  public static void main(String[] args){
+    
+  }
 
 }
