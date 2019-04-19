@@ -5,14 +5,14 @@ public class MyHeap{
     index = 2*index + 1;
     while(!inBounds(index)){
       int num1 = data[index];
-      int num2 = null;
-      if(inBounds(index+1)){num2 = index+1;}
       if(data[pos] < num1){
-        if(num2 != null && num1 < num2){}
+        if(inBounds(index+1,data)){
+          int num2 = data[index+1];
+          if(num1 < num2){}
+        }
       }
       index = 2*index + 1;
     }
-
   }
 
   private static void pushUp(int[]data,int index){
