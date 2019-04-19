@@ -5,24 +5,13 @@ public class MyHeap{
     index = 2*index + 1;
     while(index < size){
       int num1 = data[index];
-      if(data[pos] < num1){
-        if(index+1 < size){
-          int num2 = data[index+1];
-          if(num1 < num2){
-            exchange(pos,index+1,data);
-            pos = index+1;
-            index = 2*pos + 1;
-          }
-          else{
-            exchange(pos,index,data);
-            pos = index;
-            index = 2*pos + 1;
-          }
-        }
+      exchange(pos,index,data);
+      if(index+1<size && num1 < data[index+1]){
+        exchange(pos,index+1,data);
+        pos = index+1;
       }
-      else{
-        index = size;
-      }
+      else{pos = index;}
+      index = 2*pos + 1;
       System.out.println(toString(data) + " " + index);
     }
   }
@@ -67,7 +56,7 @@ public class MyHeap{
   public static void main(String[] args){
     int[] test = new int[]{2,3,18,9,5,4,20,6,1};
     System.out.println(toString(test));
-    pushDown(test,test.length,2);
+    pushDown(test,test.length,0);
     System.out.println(toString(test));
   }
 
