@@ -11,15 +11,19 @@ public class MyHeap{
           if(num1 < num2){
             exchange(pos,index+1,data);
             pos = index+1;
+            index = 2*pos + 1;
           }
           else{
             exchange(pos,index,data);
             pos = index;
+            index = 2*pos + 1;
           }
         }
       }
-      System.out.println(toString(data));
-      index = 2*pos + 1;
+      else{
+        index = size;
+      }
+      System.out.println(toString(data) + " " + index);
     }
   }
 
