@@ -21,7 +21,6 @@ public class MyHeap{
         return;
       }
       index = 2*pos + 1;
-      System.out.println(toString(data) + " " + max);
     }
   }
 
@@ -45,6 +44,17 @@ public class MyHeap{
     int temp = data[num1];
     data[num1] = data[num2];
     data[num2] = temp;
+  }
+
+  private static int Position(int[] data, int index){
+    int level = 1;
+    int counter = 1;
+    while(index > 0){
+      level++;
+      index -= counter;
+      counter *= 2;
+    }
+    return level;
   }
 
   public static String toString(int[] ary) {
