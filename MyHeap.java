@@ -1,7 +1,14 @@
 pubic class MyHeap{
 
   private static void pushDown(int[]data,int size,int index){
+    int pos = index;
+    index = 2*(index+1);
     while(!inBounds(index)){
+      int num2 = data[index];
+      int num1 = data[index-1];
+      if(data[pos] < num1){
+        if(num1 < num2){}
+      }
       index = 2*(index+1);
     }
 
