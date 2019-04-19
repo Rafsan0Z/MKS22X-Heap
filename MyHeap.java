@@ -26,7 +26,15 @@ public class MyHeap{
 
   private static void pushUp(int[]data,int index){
     int level = Position(index);
-
+    while(level > 1){
+      int swap = (int)Math.pow(2,level-1) - 2;
+      if(data[swap] < data[index]){
+      exchange(swap,index,data);
+      index = swap;
+      level--;
+    }
+    else{return;}
+    }
   }
 
   public static void heapify(int[]data){
@@ -72,9 +80,10 @@ public class MyHeap{
   public static void main(String[] args){
     int[] test = new int[]{2,3,18,9,5,4,20,6,1,5,7,3};
     System.out.println(toString(test));
-    pushDown(test,test.length,0);
+    //pushDown(test,test.length,0);
+    //System.out.println(toString(test));
+    pushUp(test,3);
     System.out.println(toString(test));
-    System.out.println(Position(test,0));
   }
 
 }
