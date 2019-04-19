@@ -54,7 +54,7 @@ public class MyHeap{
 
 
   public static void heapsort(int[]data){
-    heapify(data);
+    //heapify(data);
     int pivot = data.length-1;
     while(pivot > 0){
       exchange(0,pivot,data);
@@ -93,10 +93,11 @@ public class MyHeap{
   }
 
   public static void main(String[] args){
-    int[] test = new int[]{5,9,2,7,1,11,0};
+    int[] test = new int[]{5,9,2,7,1,11,0,21,45,76,34,-5,-67,-45,-13,77};
     System.out.println(toString(test));
     //pushDown(test,test.length,0);
-    //System.out.println(toString(test));
+    heapify(test);
+    System.out.println(toString(test));
     //pushUp(test,3);
     heapsort(test);
     System.out.println(toString(test));
