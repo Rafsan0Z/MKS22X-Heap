@@ -54,8 +54,15 @@ public class MyHeap{
 
 
   public static void heapsort(int[]data){
-
-
+    heapify(data);
+    int pivot = data.length-1;
+    while(pivot > 0){
+      exchange(0,pivot,data);
+      pushDown(data,0,pivot);
+      exchange(0,pivot-1,data);
+      System.out.println(toString(data));
+      pivot--;
+    }
   }
 
   private static void exchange(int num1, int num2, int[] data){
@@ -93,7 +100,7 @@ public class MyHeap{
     //pushDown(test,test.length,0);
     //System.out.println(toString(test));
     //pushUp(test,3);
-    heapify(test);
+    heapsort(test);
     System.out.println(toString(test));
   }
 
