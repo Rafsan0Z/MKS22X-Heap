@@ -35,5 +35,11 @@ public class MyHeap{
     return index >= data.length;
   }
 
+  private void exchange(int num1, int num2, int[] data){ 
+    int temp = data[num1];
+    data[num1] = data[num2];
+    data[num2] = temp;
+  }
+
 
 }
