@@ -38,14 +38,25 @@ public class MyHeap{
 
   }
 
-  private boolean inBounds(int index, int[] data){
+  private static boolean inBounds(int index, int[] data){
     return index >= data.length;
   }
 
-  private void exchange(int num1, int num2, int[] data){
+  private static void exchange(int num1, int num2, int[] data){
     int temp = data[num1];
     data[num1] = data[num2];
     data[num2] = temp;
+  }
+
+  public static String printArray(int[] ary) {
+    String result = "[";
+    for (int i = 0; i < ary.length ; i++) {
+      result += " " + ary[i];
+      if (i != ary.length - 1) {
+        result += ",";
+      }
+    }
+    return result + "]";
   }
 
 
