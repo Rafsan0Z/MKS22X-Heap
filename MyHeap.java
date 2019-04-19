@@ -41,10 +41,6 @@ public class MyHeap{
 
   }
 
-  private static boolean inBounds(int index, int[] data){
-    return index < data.length;
-  }
-
   private static void exchange(int num1, int num2, int[] data){
     int temp = data[num1];
     data[num1] = data[num2];
@@ -63,9 +59,9 @@ public class MyHeap{
   }
 
   public static void main(String[] args){
-    int[] test = new int[]{2,3,18,9,5,4,20,6,1};
+    int[] test = new int[]{2,3,18,9,5,4,20,6,1,5,7,3};
     System.out.println(toString(test));
-    pushDown(test,test.length,4);
+    pushDown(test,test.length,1);
     System.out.println(toString(test));
   }
 
