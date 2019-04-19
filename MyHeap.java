@@ -42,9 +42,12 @@ public class MyHeap{
     int limit = Position(size);
     int level = 1;
     while(level < limit){
-      for(int i = ; i < ; i++){
+      int start = (int)Math.pow(2,level-1) - 1;
+      int stop = (int)Math.pow(2,level) - 2;
+      for(int i = start; i <= stop; i++){
         pushDown(data,size,i);
       }
+      level++;
     }
   }
 
@@ -88,7 +91,8 @@ public class MyHeap{
     System.out.println(toString(test));
     //pushDown(test,test.length,0);
     //System.out.println(toString(test));
-    pushUp(test,3);
+    //pushUp(test,3);
+    heapify(test);
     System.out.println(toString(test));
   }
 
