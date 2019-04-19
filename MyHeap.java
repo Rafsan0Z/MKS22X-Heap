@@ -58,9 +58,7 @@ public class MyHeap{
     int pivot = data.length-1;
     while(pivot > 0){
       exchange(0,pivot,data);
-      pushDown(data,0,pivot);
-      exchange(0,pivot-1,data);
-      System.out.println(toString(data));
+      pushDown(data,pivot,0);
       pivot--;
     }
   }
