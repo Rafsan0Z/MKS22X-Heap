@@ -41,9 +41,10 @@ public class MyHeap{
     int size = data.length - 1;
     int limit = Position(size);
     int level = limit - 1;
-    while(level >= 0){
+    while(level > 0){
       int stop = (int)Math.pow(2,level-1) - 1;
       int start = (int)Math.pow(2,level) - 2;
+      System.out.println(start + ", " + stop);
       for(int i = start; i >= stop; i--){
         pushDown(data,size,i);
       }
