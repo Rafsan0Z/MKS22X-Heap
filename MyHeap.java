@@ -44,18 +44,16 @@ public class MyHeap{
     while(level > 0){
       int stop = (int)Math.pow(2,level-1) - 1;
       int start = (int)Math.pow(2,level) - 2;
-      System.out.println(start + ", " + stop);
       for(int i = start; i >= stop; i--){
         pushDown(data,data.length,i);
       }
-      System.out.println(toString(data));
       level--;
     }
   }
 
 
   public static void heapsort(int[]data){
-    //heapify(data);
+    heapify(data);
     int pivot = data.length-1;
     while(pivot > 0){
       exchange(0,pivot,data);
@@ -94,14 +92,14 @@ public class MyHeap{
   }
 
   public static void main(String[] args){
-    int[] test = new int[]{5,9,-5,-67,-45,-13,77};
+    int[] test = new int[]{5,9,-5,-67,-45,-13,77,567,-32,-45,-213,90,34,56,76,54};
     System.out.println(toString(test));
     //pushDown(test,test.length,0);
-    heapify(test);
-    System.out.println(toString(test));
-    //pushUp(test,3);
-    //heapsort(test);
+    //heapify(test);
     //System.out.println(toString(test));
+    //pushUp(test,3);
+    heapsort(test);
+    System.out.println(toString(test));
   }
 
 }
