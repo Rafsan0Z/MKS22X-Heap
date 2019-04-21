@@ -92,14 +92,15 @@ public class MyHeap{
   }
 
   public static void main(String[] args){
-    int[] test = new int[]{5,9,-5,-67,-45,-13,77,567,-32,-45,-213,90,34,56,76,54};
+    int[] test = new int[]{5,9,-5,-67,-45,-13,77,567,-32,-45,-213,90,34,56,76,54,-43,23,41,20,97};
     System.out.println(toString(test));
     //pushDown(test,test.length,0);
-    //heapify(test);
+    heapify(test);
     //System.out.println(toString(test));
     //pushUp(test,3);
-    heapsort(test);
-    System.out.println(toString(test));
+    //heapsort(test);
+    //System.out.println(toString(test));
+    System.out.println(HeapPrinter.toString(test));
   }
 
 }
